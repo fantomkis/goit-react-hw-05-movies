@@ -1,0 +1,8 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.film {
+  color: black;
+  padding: 5px 0;
+}
