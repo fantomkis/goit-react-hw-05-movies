@@ -7,7 +7,7 @@ function Navigat(props) {
       <NavLink to="/" className={s.home}>
         Home
       </NavLink>
-      <NavLink to="/movies" className={s.home}>
+      <NavLink to="movies" className={s.home}>
         Movies
       </NavLink>
     </div>

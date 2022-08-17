@@ -3,6 +3,7 @@ import { getOneMovie } from '../api/api';
 import { useState, useEffect, Suspense } from 'react';
 import Loader from '../components/Loader/Loader';
 import Movies from '../components/Movies/Movies';
+import MovieInfo from 'components/MovieInfo/MovieInfo';
 
 function MovieDetails(props) {
   const [film, setFilm] = useState({});
@@ -17,10 +18,10 @@ function MovieDetails(props) {
       .catch(error => console.log(error));
   }, [id]);
 
-  console.log(film);
   return (
     <section>
       {film && <Movies movie={film} />}
+      {film && <MovieInfo />}
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>

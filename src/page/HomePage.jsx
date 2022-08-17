@@ -12,7 +12,7 @@ const HomePage = () => {
       })
       .catch(error => console.log(error));
   }, []);
-  console.log(trends);
+
   return (
     <>
       <Sectins trends={trends} />
