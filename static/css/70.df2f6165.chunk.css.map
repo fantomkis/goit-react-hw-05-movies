@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/70.df2f6165.chunk.css","mappings":"AAAA,wBACE,YAAa,CACb,qBACF,CACA,wBACE,UAAY,CACZ,aACF","sources":["components/MoviesList/MoviasList.module.css"],"sourcesContent":[".list {\n  display: flex;\n  flex-direction: column;\n}\n.film {\n  color: black;\n  padding: 5px 0;\n}\n"],"names":[],"sourceRoot":""}
