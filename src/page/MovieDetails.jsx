@@ -1,0 +1,31 @@
+import { useParams, Outlet } from 'react-router-dom';
+import { getOneMovie } from '../api/api';
+import { useState, useEffect, Suspense } from 'react';
+import Loader from '../components/Loader/Loader';
+import Movies from '../components/Movies/Movies';
+
+function MovieDetails(props) {
+  const [film, setFilm] = useState({});
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getOneMovie(id)
+      .then(res => {
+        setFilm(res);
+      })
+      .catch(error => console.log(error));
+  }, [id]);
+
+  console.log(film);
+  return (
+    <section>
+      {film && <Movies movie={film} />}
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </section>
+  );
+}
+
+export default MovieDetails;
