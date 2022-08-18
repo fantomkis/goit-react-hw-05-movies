@@ -17,7 +17,7 @@ function MovieDetails(props) {
       })
       .catch(error => console.log(error));
   }, [id]);
-
+  console.log(film);
   return (
     <section>
       {film && <Movies movie={film} />}
