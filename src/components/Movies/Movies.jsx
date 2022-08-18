@@ -10,6 +10,7 @@ function Movies({ movie }) {
     movie;
   const location = useLocation();
   const navigate = useNavigate();
+  console.log(location.state?.from);
 
   const normalizedUserScore = (vote_average * 10).toFixed(0);
 
@@ -17,7 +18,7 @@ function Movies({ movie }) {
     <>
       <button
         className={s.button}
-        onClick={() => navigate(location.state ?? '/')}
+        onClick={() => navigate(location.state?.from ?? '/')}
       >
         Go back
       </button>

@@ -1,7 +1,7 @@
 import s from './MoviasList.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
 
-function Home({ trends }) {
+function MoviasList({ trends }) {
   const location = useLocation();
 
   return (
@@ -10,11 +10,7 @@ function Home({ trends }) {
         {trends &&
           trends.map(({ title, id }) => (
             <li key={id}>
-              <NavLink
-                to={`/movie/${id}`}
-                className={s.film}
-                state={{ location }}
-              >
+              <NavLink to={`/movie/${id}`} className={s.film} state={location}>
                 {title}
               </NavLink>
             </li>
@@ -24,4 +20,4 @@ function Home({ trends }) {
   );
 }
 
-export default Home;
+export default MoviasList;
