@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { normalizedYearOfMovie, normolizedGenres } from '../../helper/helper';
 import placeholder from '../../imeges/posterholder.jpg';
 import s from './Movies.moduls.css';
@@ -9,19 +9,15 @@ function Movies({ movie }) {
   const { poster_path, vote_average, overview, title, release_date, genres } =
     movie;
   const location = useLocation();
-  const navigate = useNavigate();
-  console.log(location.state?.from);
+  const backLinkHref = location.state?.from ?? '/';
 
   const normalizedUserScore = (vote_average * 10).toFixed(0);
 
   return (
     <>
-      <button
-        className={s.button}
-        onClick={() => navigate(location.state?.from ?? '/')}
-      >
+      <Link to={backLinkHref} className={s.button}>
         Go back
-      </button>
+      </Link>
       <div>
         <img
           src={

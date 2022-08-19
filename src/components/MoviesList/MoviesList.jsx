@@ -10,7 +10,11 @@ function MoviasList({ trends }) {
         {trends &&
           trends.map(({ title, id }) => (
             <li key={id}>
-              <NavLink to={`/movie/${id}`} className={s.film} state={location}>
+              <NavLink
+                to={`/movie/${id}`}
+                className={s.film}
+                state={{ from: location ?? '/' }}
+              >
                 {title}
               </NavLink>
             </li>
